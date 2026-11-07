@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Gym Management System dashboard mockup">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#B9821B"/>
+      <stop offset="1" stop-color="#FBBA42"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A1A1A"/>
+      <stop offset="1" stop-color="#0C0C0C"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="#0B0B0B"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="220" height="800" fill="#101010"/>
+  <line x1="220" y1="0" x2="220" y2="800" stroke="#242424" stroke-width="1"/>
+  <rect x="28" y="30" width="34" height="34" rx="8" fill="#FBBA42"/>
+  <text x="45" y="53" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111" text-anchor="middle">IH</text>
+  <text x="76" y="45" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#FFFFFF">IRONHOUSE</text>
+  <text x="76" y="60" font-family="Arial, Helvetica, sans-serif" font-size="8" letter-spacing="2.4" fill="#7C7C7C">MANAGEMENT</text>
+
+  <rect x="16" y="112" width="188" height="42" rx="8" fill="#FBBA42" fill-opacity="0.12"/>
+  <rect x="16" y="112" width="3" height="42" rx="1.5" fill="#FBBA42"/>
+  <circle cx="36" cy="133" r="4" fill="#FBBA42"/>
+  <text x="52" y="138" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#FBBA42" font-weight="700">Dashboard</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8A8A8A">
+    <circle cx="36" cy="177" r="3.5" fill="#5A5A5A"/><text x="52" y="182">Members</text>
+    <circle cx="36" cy="221" r="3.5" fill="#5A5A5A"/><text x="52" y="226">Attendance</text>
+    <circle cx="36" cy="265" r="3.5" fill="#5A5A5A"/><text x="52" y="270">Payments</text>
+    <circle cx="36" cy="309" r="3.5" fill="#5A5A5A"/><text x="52" y="314">Reports</text>
+    <circle cx="36" cy="353" r="3.5" fill="#5A5A5A"/><text x="52" y="358">Settings</text>
+  </g>
+
+  <rect x="16" y="700" width="188" height="1" fill="#242424"/>
+  <circle cx="38" cy="738" r="14" fill="#242424"/>
+  <text x="38" y="742" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#CFCFCF" text-anchor="middle">SK</text>
+  <text x="60" y="735" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#DADADA">Sourabh K.</text>
+  <text x="60" y="748" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#6E6E6E">Administrator</text>
+
+  <!-- Header -->
+  <text x="260" y="62" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">Dashboard</text>
+  <text x="260" y="86" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#7C7C7C">Tuesday, 21 October 2026 · Overview</text>
+
+  <rect x="860" y="34" width="180" height="38" rx="19" fill="#151515" stroke="#2A2A2A"/>
+  <circle cx="882" cy="53" r="5" fill="none" stroke="#777" stroke-width="1.5"/>
+  <line x1="886" y1="57" x2="890" y2="61" stroke="#777" stroke-width="1.5"/>
+  <text x="902" y="57" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#6E6E6E">Search members…</text>
+  <circle cx="1086" cy="53" r="19" fill="#FBBA42"/>
+  <text x="1086" y="57" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">SK</text>
+
+  <!-- Stat cards -->
+  <g>
+    <rect x="260" y="118" width="270" height="108" rx="10" fill="#151515" stroke="#292929"/>
+    <text x="282" y="145" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.8" fill="#7C7C7C">TOTAL MEMBERS</text>
+    <text x="282" y="185" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">1,248</text>
+    <text x="282" y="207" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#7DCB8B">▲ 12.4% vs last month</text>
+    <circle cx="500" cy="142" r="3" fill="#FBBA42"/>
+  </g>
+  <g>
+    <rect x="550" y="118" width="270" height="108" rx="10" fill="#151515" stroke="#292929"/>
+    <text x="572" y="145" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.8" fill="#7C7C7C">TODAY'S CHECK-INS</text>
+    <text x="572" y="185" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">312</text>
+    <text x="572" y="207" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#7DCB8B">▲ 8.1% vs yesterday</text>
+    <circle cx="790" cy="142" r="3" fill="#FBBA42"/>
+  </g>
+  <g>
+    <rect x="840" y="118" width="270" height="108" rx="10" fill="#151515" stroke="#292929"/>
+    <text x="862" y="145" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.8" fill="#7C7C7C">MONTHLY REVENUE</text>
+    <text x="862" y="185" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#FBBA42">₹1.24L</text>
+    <text x="862" y="207" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#7DCB8B">▲ 18.7% vs last month</text>
+    <circle cx="1080" cy="142" r="3" fill="#FBBA42"/>
+  </g>
+
+  <!-- Bar chart -->
+  <rect x="260" y="252" width="560" height="300" rx="10" fill="#151515" stroke="#292929"/>
+  <text x="282" y="282" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Weekly check-ins</text>
+  <text x="282" y="300" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#6E6E6E">Monday — Sunday · all branches</text>
+  <g stroke="#242424" stroke-width="1">
+    <line x1="282" y1="360" x2="798" y2="360"/>
+    <line x1="282" y1="400" x2="798" y2="400"/>
+    <line x1="282" y1="440" x2="798" y2="440"/>
+    <line x1="282" y1="480" x2="798" y2="480"/>
+  </g>
+  <g fill="url(#gold)">
+    <rect x="300" y="400" width="30" height="80" rx="3"/>
+    <rect x="360" y="370" width="30" height="110" rx="3"/>
+    <rect x="420" y="392" width="30" height="88" rx="3"/>
+    <rect x="480" y="338" width="30" height="142" rx="3"/>
+    <rect x="540" y="356" width="30" height="124" rx="3"/>
+    <rect x="600" y="318" width="30" height="162" rx="3"/>
+    <rect x="660" y="348" width="30" height="132" rx="3"/>
+    <rect x="720" y="372" width="30" height="108" rx="3"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#666" text-anchor="middle">
+    <text x="315" y="498">MON</text><text x="375" y="498">TUE</text><text x="435" y="498">WED</text><text x="495" y="498">THU</text>
+    <text x="555" y="498">FRI</text><text x="615" y="498">SAT</text><text x="675" y="498">SUN</text><text x="735" y="498">AVG</text>
+  </g>
+  <rect x="650" y="272" width="66" height="20" rx="10" fill="#242424"/>
+  <text x="683" y="286" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#CFCFCF" text-anchor="middle">THIS WEEK</text>
+
+  <!-- Donut -->
+  <rect x="840" y="252" width="270" height="300" rx="10" fill="#151515" stroke="#292929"/>
+  <text x="862" y="282" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Capacity</text>
+  <text x="862" y="300" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#6E6E6E">Live occupancy</text>
+  <circle cx="975" cy="390" r="66" fill="none" stroke="#242424" stroke-width="16"/>
+  <circle cx="975" cy="390" r="66" fill="none" stroke="#FBBA42" stroke-width="16" stroke-linecap="round"
+          stroke-dasharray="415" stroke-dashoffset="75" transform="rotate(-90 975 390)"/>
+  <text x="975" y="392" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">82%</text>
+  <text x="975" y="410" font-family="Arial, Helvetica, sans-serif" font-size="8" letter-spacing="1.4" fill="#6E6E6E" text-anchor="middle">OCCUPIED</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#9A9A9A">
+    <circle cx="870" cy="492" r="3" fill="#FBBA42"/><text x="880" y="495">Members</text>
+    <circle cx="948" cy="492" r="3" fill="#6E6E6E"/><text x="958" y="495">Guests</text>
+    <circle cx="1024" cy="492" r="3" fill="#3A3A3A"/><text x="1034" y="495">Staff</text>
+  </g>
+
+  <!-- Table -->
+  <rect x="260" y="572" width="850" height="190" rx="10" fill="#151515" stroke="#292929"/>
+  <text x="282" y="602" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Recent check-ins</text>
+  <text x="1088" y="602" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#FBBA42" text-anchor="end">View all →</text>
+  <line x1="282" y1="616" x2="1088" y2="616" stroke="#262626"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#6E6E6E">
+    <text x="282" y="636">MEMBER</text><text x="560" y="636">PLAN</text><text x="760" y="636">CHECK-IN</text><text x="980" y="636">STATUS</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#DADADA">
+    <text x="282" y="666">Aarav Patil</text><text x="560" y="666">Gold Annual</text><text x="760" y="666">06:42 AM</text>
+    <text x="282" y="702">Meera Joshi</text><text x="560" y="702">Silver Monthly</text><text x="760" y="702">07:15 AM</text>
+    <text x="282" y="738">Rohan Deshmukh</text><text x="560" y="738">Day Pass</text><text x="760" y="738">08:03 AM</text>
+  </g>
+  <g>
+    <rect x="980" y="654" width="58" height="18" rx="9" fill="#1E3A25"/><text x="1009" y="667" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#7DCB8B" text-anchor="middle">ACTIVE</text>
+    <rect x="980" y="690" width="58" height="18" rx="9" fill="#1E3A25"/><text x="1009" y="703" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#7DCB8B" text-anchor="middle">ACTIVE</text>
+    <rect x="980" y="726" width="58" height="18" rx="9" fill="#3A2E14"/><text x="1009" y="739" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#FBBA42" text-anchor="middle">GUEST</text>
+  </g>
+</svg>

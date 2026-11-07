@@ -1,0 +1,12 @@
+# Local environment and Vercel metadata
+.env
+.env.local
+.env.*.local
+.vercel
+
+# Dependencies (the site has none, but keep this future-proof)
+node_modules
+
+# OS / editor noise
+.DS_Store
+Thumbs.db

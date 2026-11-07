@@ -1,0 +1,635 @@
+/* ==========================================================================
+   base.css — reset, typography, shared primitives
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 24px);
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.006em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  transition: background-color var(--dur) ease, color var(--dur) ease;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+img,
+svg,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--selection);
+  color: #111111;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 999px;
+}
+
+/* --------------------------------------------------------------------------
+   Layout primitives
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: min(calc(100% - (var(--gutter) * 2)), var(--container));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(calc(100% - (var(--gutter) * 2)), 980px);
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+.section--tight {
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+.section--line {
+  border-top: 1px solid var(--line);
+}
+
+.section--surface {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--line);
+}
+
+/* --------------------------------------------------------------------------
+   Type primitives
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.4rem;
+  color: var(--accent-text);
+  font-size: var(--fs-eyebrow, var(--fs-xs));
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  flex: 0 0 auto;
+  background: currentColor;
+}
+
+.section-title {
+  max-width: 16ch;
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--accent-text);
+}
+
+.section-title--wide {
+  max-width: 22ch;
+}
+
+.section-title--xl {
+  max-width: 18ch;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+}
+
+.lead {
+  color: var(--muted);
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.micro {
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.text-accent {
+  color: var(--accent-text);
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+.section-head__aside {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  padding-bottom: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-fast) ease, gap var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
+}
+
+.link-arrow svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.link-arrow:hover {
+  color: var(--accent-text);
+  gap: 0.8rem;
+  border-color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 48px;
+  padding: 0.95rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-size: var(--fs-btn);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.btn svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  transition: transform var(--dur) var(--ease);
+}
+
+.btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.btn:active {
+  transform: scale(0.975);
+}
+
+.btn--primary {
+  overflow: hidden;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn--primary::before,
+.btn--primary::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--on-accent);
+  transition: top var(--dur) var(--ease), left var(--dur) var(--ease),
+    bottom var(--dur) var(--ease), right var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.btn--primary::before {
+  top: 0;
+  left: 0;
+}
+
+.btn--primary::after {
+  right: 0;
+  bottom: 0;
+}
+
+.btn--primary:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn--primary:hover::before {
+  top: calc(100% - 6px);
+  left: calc(100% - 6px);
+  background: var(--accent);
+}
+
+.btn--primary:hover::after {
+  right: calc(100% - 6px);
+  bottom: calc(100% - 6px);
+  background: var(--accent);
+}
+
+.btn--primary .btn__label,
+.btn--primary svg {
+  position: relative;
+  z-index: 1;
+}
+
+.btn--ghost {
+  border-color: var(--border-ui);
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn--ink {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn--ink:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn--sm {
+  min-height: 42px;
+  padding: 0.75rem 1.05rem;
+  font-size: 0.75rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Tags & socials
+   -------------------------------------------------------------------------- */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0.3rem 0.72rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  transition: background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease, color var(--dur-fast) ease,
+    transform var(--dur-fast) var(--ease);
+}
+
+.social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  transform: translateY(-3px);
+}
+
+.socials .social-link:hover,
+.socials .social-link:focus-visible {
+  color: var(--on-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Reveal system
+   -------------------------------------------------------------------------- */
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-reveal]:not(.is-visible) {
+  transition-delay: 0ms;
+}
+
+.js [data-reveal="fade"] {
+  transform: none;
+}
+
+.js [data-reveal="left"] {
+  transform: translateX(-32px);
+}
+
+.js [data-reveal="right"] {
+  transform: translateX(32px);
+}
+
+.js [data-reveal="zoom"] {
+  transform: scale(0.94);
+}
+
+/* --------------------------------------------------------------------------
+   Forms
+   -------------------------------------------------------------------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 0.85rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: var(--input);
+  color: var(--ink);
+  font-size: var(--fs-sm);
+  outline: none;
+  transition: border-color var(--dur-fast) ease,
+    background-color var(--dur-fast) ease;
+}
+
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted-2);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  background: var(--bg);
+}
+
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.75rem;
+  background-image: none;
+}
+
+.field select::-ms-expand {
+  display: none;
+}
+
+/* One arrow, drawn as a real element so no browser can repeat the
+   background image inside the select box. */
+.select-wrap {
+  position: relative;
+  display: block;
+}
+
+.select-wrap select {
+  width: 100%;
+}
+
+.select-wrap__icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 16px;
+  height: 16px;
+  color: var(--muted-2);
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: color var(--dur-fast) ease;
+}
+
+.select-wrap:focus-within .select-wrap__icon {
+  color: var(--accent-text);
+}
+
+/* --------------------------------------------------------------------------
+   Utilities
+   -------------------------------------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transform: translate(-50%, -150%);
+  transition: transform var(--dur-fast) ease;
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

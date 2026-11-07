@@ -1,0 +1,411 @@
+/* ==========================================================================
+   components.css — reusable cards and blocks
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Project cards
+   -------------------------------------------------------------------------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.project-card__media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.project-card__media img,
+.project-card__media > svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+
+.project-card:hover .project-card__media img {
+  transform: scale(1.045);
+}
+
+.project-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  padding: 0.35rem 0.6rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding-top: 1.15rem;
+}
+
+.project-card__row {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.project-card__num {
+  padding-top: 0.4rem;
+  color: var(--muted-2);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.project-card__title {
+  font-size: clamp(1.3rem, 2.1vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  transition: color var(--dur-fast) ease;
+}
+
+.project-card:hover .project-card__title {
+  color: var(--accent-text);
+}
+
+.project-card__text {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+.project-card__arrow {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  transition: background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease);
+}
+
+.project-card__arrow svg {
+  width: 15px;
+  height: 15px;
+}
+
+.project-card:hover .project-card__arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  transform: rotate(45deg);
+}
+
+.project-card__tags {
+  padding-left: 3.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Tool cards
+   -------------------------------------------------------------------------- */
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.tool-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  padding: 1.6rem;
+  background: var(--bg);
+  transition: background-color var(--dur) ease;
+}
+
+.tool-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur) var(--ease);
+}
+
+.tool-card:hover {
+  background: var(--surface-2);
+}
+
+.tool-card:hover::after {
+  transform: scaleX(1);
+}
+
+.tool-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tool-card__num {
+  color: var(--muted-2);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.tool-card__icon {
+  width: 34px;
+  height: 34px;
+  color: var(--accent-text);
+}
+
+.tool-card h3 {
+  margin-top: auto;
+  padding-top: 2.75rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.tool-card p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.tool-card .tag-list {
+  margin-top: 1.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Facts / info rows
+   -------------------------------------------------------------------------- */
+
+.fact-list {
+  border-top: 1px solid var(--line);
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fact__num {
+  padding-top: 0.2rem;
+  color: var(--muted-2);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.fact h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.fact p {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Certificate card
+   -------------------------------------------------------------------------- */
+
+.cert-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  border: 1px solid var(--line);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.cert-card__media {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.cert-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.cert-card:hover .cert-card__media img {
+  transform: scale(1.035);
+}
+
+.cert-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.cert-card__meta {
+  color: var(--accent-text);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cert-card h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  font-weight: 500;
+}
+
+.cert-card p {
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Big CTA
+   -------------------------------------------------------------------------- */
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  border-top: 1px solid var(--line);
+}
+
+.cta__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.cta__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 11.5vw, 10rem);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.cta__title span {
+  display: block;
+}
+
+.cta__title .is-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--muted-2);
+}
+
+.cta__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.cta__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cta__note {
+  max-width: 290px;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — components
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 991px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cert-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-card__media {
+    min-height: 320px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 575px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card {
+    min-height: 230px;
+  }
+
+  .project-card__row {
+    grid-template-columns: 2rem minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+
+  .project-card__tags {
+    padding-left: 2.75rem;
+  }
+
+  .cta__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
