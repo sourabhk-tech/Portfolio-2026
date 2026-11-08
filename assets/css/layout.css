@@ -320,16 +320,6 @@ html[data-theme="dark"] .theme-toggle__knob {
   padding-top: 2.5rem;
 }
 
-.side-menu__footer > a {
-  color: var(--muted);
-  font-size: 0.8125rem;
-  transition: color var(--dur-fast) ease;
-}
-
-.side-menu__footer > a:hover {
-  color: var(--accent-text);
-}
-
 /* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */

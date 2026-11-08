@@ -35,7 +35,6 @@ Navigation: **Home · About · Projects · Resume · Contact**
 - Silent, home-only intro/preloader with a reduced-motion fallback; no autoplay audio or button sounds
 - Contact form posts to `/api/contact` with validation, loading/success/error states, a honeypot, and a direct-email fallback
 - Vercel serverless function delivers via Resend and/or an optional storage webhook
-- Resume PDF regenerated to match the site
 - Self-hosted Outfit and Anton WOFF2 fonts
 - Unique titles, descriptions, Open Graph/Twitter metadata, and Person JSON-LD
 - Print-friendly resume layout

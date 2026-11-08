@@ -1268,7 +1268,9 @@
   position: relative;
   display: flex;
   align-items: center;
+  min-height: 100vh;
   min-height: 100svh;
+  min-height: 100dvh;
   padding-top: var(--header-h);
   overflow: clip;
 }
