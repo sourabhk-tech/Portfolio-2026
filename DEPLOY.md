@@ -84,11 +84,11 @@ Then open the local URL and submit the form.
 
 ### 4. Before going live
 
-- [ ] Confirm the production domain.
-- [ ] Set the Resend/webhook environment variables and redeploy.
-- [ ] Send a real test message and confirm it arrives.
-- [ ] Replace relative canonical URLs and OG image paths with absolute URLs.
-- [ ] Generate `sitemap.xml` with the final domain and uncomment the
+- [x] Confirm the production domain — `sourabhkumbhar-portfolio.vercel.app`.
+- [x] Set the Resend/webhook environment variables and redeploy.
+- [x] Send a real test message and confirm it arrives.
+- [x] Replace relative canonical URLs and OG image paths with absolute URLs.
+- [x] Generate `sitemap.xml` with the final domain and uncomment the
       `Sitemap:` line in `robots.txt`.
 - [ ] Re-run the accessibility, link, and responsive checks.
 

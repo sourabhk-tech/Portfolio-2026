@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add this after the production domain is confirmed:
-# Sitemap: https://your-domain.example/sitemap.xml
+Sitemap: https://sourabhkumbhar-portfolio.vercel.app/sitemap.xml

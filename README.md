@@ -130,11 +130,11 @@ Portfolio-2026/
 
 ## Launch checklist
 
-- [ ] Choose the production domain and host — see `DEPLOY.md`
-- [ ] Add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` in Vercel (and optionally `CONTACT_WEBHOOK_URL`)
-- [ ] Send a real test message from the deployed site and confirm it arrives
-- [ ] Replace the relative canonical and OG image paths with absolute URLs
-- [ ] Add `og:url` and generate `sitemap.xml` with the final domain
+- [x] Choose the production domain and host — `sourabhkumbhar-portfolio.vercel.app`
+- [x] Add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` in Vercel (and optionally `CONTACT_WEBHOOK_URL`)
+- [x] Send a real test message from the deployed site and confirm it arrives
+- [x] Replace the relative canonical and OG image paths with absolute URLs
+- [x] Add `og:url` and generate `sitemap.xml` with the final domain
 - [ ] Add work experience/internships, two more projects, and preferred title when available
 - [ ] Re-run the audit after content additions
 
